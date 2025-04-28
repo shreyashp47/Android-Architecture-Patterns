@@ -12,7 +12,9 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/mvc" />
+            <option value="$PROJECT_DIR$/mvi" />
             <option value="$PROJECT_DIR$/mvp" />
+            <option value="$PROJECT_DIR$/mvvm" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

@@ -9,7 +9,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.shreyash.androidarchitecturepatterns.databinding.ActivityMainBinding
 import com.shreyash.mvc.MVCMainActivity
+import com.shreyash.mvi.MVIMainActivity
 import com.shreyash.mvp.MVPMainActivity
+import com.shreyash.mvvm.MVVMMainActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,15 +42,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnMvp.setOnClickListener {
-             startActivity(Intent(this, MVPMainActivity::class.java))
+            startActivity(Intent(this, MVPMainActivity::class.java))
         }
 
         binding.btnMvvm.setOnClickListener {
-            // startActivity(Intent(this, MvvmActivity::class.java))
+            startActivity(Intent(this, MVVMMainActivity::class.java))
         }
 
         binding.btnMvi.setOnClickListener {
-            // startActivity(Intent(this, MviActivity::class.java))
+            startActivity(Intent(this, MVIMainActivity::class.java))
         }
     }
 }
