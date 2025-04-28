@@ -9,6 +9,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.shreyash.androidarchitecturepatterns.databinding.ActivityMainBinding
 import com.shreyash.mvc.MVCMainActivity
+import com.shreyash.mvp.MVPMainActivity
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -38,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnMvp.setOnClickListener {
-            // startActivity(Intent(this, MvpActivity::class.java))
+             startActivity(Intent(this, MVPMainActivity::class.java))
         }
 
         binding.btnMvvm.setOnClickListener {

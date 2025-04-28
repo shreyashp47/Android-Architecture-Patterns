@@ -1,24 +1,17 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.shreyash.androidarchitecturepatterns"
+    namespace = "com.shreyash.mvp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.shreyash.androidarchitecturepatterns"
         minSdk = 28
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-    buildFeatures {
-        viewBinding = true
-        dataBinding = true
     }
 
     buildTypes {
@@ -41,8 +34,6 @@ android {
 
 dependencies {
 
-    implementation(project(":mvc"))
-    implementation(project(":mvp"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
