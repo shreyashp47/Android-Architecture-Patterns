@@ -47,6 +47,8 @@ mvc/
 │   │   └── item_task.xml
 ```
 
+---
+
 ### MVP (Model-View-Presenter)
 An evolution of MVC where the Presenter handles the UI logic and updates the View.
 
@@ -84,7 +86,7 @@ mvp/
 │   │   └── item_task.xml
 ```
 
-
+---
 
 ### MVVM (Model-View-ViewModel)
 A pattern that leverages data binding to separate UI from business logic.
@@ -122,6 +124,8 @@ mvvm/
 │   │   ├── activity_main.xml
 │   │   └── item_task.xml
 ```
+
+---
 
 ### MVI (Model-View-Intent)
 A unidirectional data flow pattern inspired by functional programming.
@@ -165,3 +169,5 @@ mvi/
 │   │   ├── activity_main.xml
 │   │   └── item_task.xml
 ```
+
+---
