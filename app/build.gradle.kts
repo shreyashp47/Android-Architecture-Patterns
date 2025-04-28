@@ -43,6 +43,7 @@ dependencies {
 
     implementation(project(":mvc"))
     implementation(project(":mvp"))
+    implementation(project(":common"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

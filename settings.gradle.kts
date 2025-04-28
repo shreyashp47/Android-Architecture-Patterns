@@ -23,3 +23,4 @@ rootProject.name = "Android Architecture Patterns"
 include(":app")
 include(":mvc")
 include(":mvp")
+include(":common")
