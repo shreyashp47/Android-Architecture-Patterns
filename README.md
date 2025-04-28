@@ -36,15 +36,15 @@ The traditional pattern where the Controller acts as the mediator between Model 
 ```
 mvc/
 ├── adapter/
-│   └── TaskAdapter.kt
-├── model/
-│   ├── Task.kt
-│   └── TaskRepository.kt
-├── MVCMainActivity.kt
-├── res/
+│   └── TaskAdapter.kt                 # Part of View (RecyclerView adapter)
+├── model/                             # Model
+│   ├── Task.kt                        # Data class representing a task
+│   └── TaskRepository.kt              # Business logic and data operations
+├── MVCMainActivity.kt                 # Controller + View (Activity)
+├── res/                               # View
 │   ├── layout/
-│   │   ├── activity_main.xml
-│   │   └── item_task.xml
+│   │   ├── activity_main.xml          # Main UI layout
+│   │   └── item_task.xml              # Task item layout
 ```
 
 ---
@@ -71,19 +71,19 @@ An evolution of MVC where the Presenter handles the UI logic and updates the Vie
 ```
 mvp/
 ├── contract/
-│   └── MainContract.kt (View + Presenter interfaces)
-├── model/
-│   ├── Task.kt
-│   └── TaskRepository.kt
-├── presenter/
-│   └── MainPresenter.kt
+│   └── MainContract.kt                # Interfaces defining View and Presenter
+├── model/                             # Model
+│   ├── Task.kt                        # Data class representing a task
+│   └── TaskRepository.kt              # Business logic and data operations
+├── presenter/                         # Presenter
+│   └── MainPresenter.kt               # Handles UI logic and updates View
 ├── adapter/
-│   └── TaskAdapter.kt
-├── MVPMainActivity.kt (View)
-├── res/
+│   └── TaskAdapter.kt                 # Part of View (RecyclerView adapter)
+├── MVPMainActivity.kt                 # View (implements View interface)
+├── res/                               # View
 │   ├── layout/
-│   │   ├── activity_main.xml
-│   │   └── item_task.xml
+│   │   ├── activity_main.xml          # Main UI layout
+│   │   └── item_task.xml              # Task item layout
 ```
 
 ---
@@ -110,19 +110,19 @@ A pattern that leverages data binding to separate UI from business logic.
 ### Project Structure MVVM
 ```
 mvvm/
-├── model/
-│   ├── Task.kt
-│   └── TaskRepository.kt
-├── view/
-│   ├── MVVMainActivity.kt (View)
+├── model/                             # Model
+│   ├── Task.kt                        # Data class representing a task
+│   └── TaskRepository.kt              # Business logic and data operations
+├── view/                              # View
+│   ├── MVVMainActivity.kt             # Activity that observes ViewModel
 │   └── adapter/
-│       └── TaskAdapter.kt
-├── viewmodel/
-│   └── MainViewModel.kt
-├── res/
+│       └── TaskAdapter.kt             # RecyclerView adapter
+├── viewmodel/                         # ViewModel
+│   └── MainViewModel.kt               # Exposes data streams to View
+├── res/                               # View
 │   ├── layout/
-│   │   ├── activity_main.xml
-│   │   └── item_task.xml
+│   │   ├── activity_main.xml          # Main UI layout with data binding
+│   │   └── item_task.xml              # Task item layout
 ```
 
 ---
@@ -151,23 +151,23 @@ A unidirectional data flow pattern inspired by functional programming.
 ### Project Structure MVI
 ```
 mvi/
-├── model/
-│   ├── Task.kt
-│   └── TaskRepository.kt
-├── intent/
-│   └── TaskIntent.kt
-├── state/
-│   └── TaskState.kt
-├── view/
-│   ├── MVIMainActivity.kt
+├── model/                             # Model (represents state)
+│   ├── Task.kt                        # Data class representing a task
+│   └── TaskRepository.kt              # Business logic and data operations
+├── intent/                            # Intent
+│   └── TaskIntent.kt                  # Represents user actions that can change state
+├── state/                             # State
+│   └── TaskState.kt                   # Immutable data representing UI state
+├── view/                              # View
+│   ├── MVIMainActivity.kt             # Activity that renders state and sends intents
 │   └── adapter/
-│       └── TaskAdapter.kt
-├── viewmodel/
-│   └── TaskViewModel.kt
-├── res/
+│       └── TaskAdapter.kt             # RecyclerView adapter
+├── viewmodel/                         # ViewModel
+│   └── TaskViewModel.kt               # Processes intents and updates state
+├── res/                               # View
 │   ├── layout/
-│   │   ├── activity_main.xml
-│   │   └── item_task.xml
+│   │   ├── activity_main.xml          # Main UI layout
+│   │   └── item_task.xml              # Task item layout
 ```
 
 ---
