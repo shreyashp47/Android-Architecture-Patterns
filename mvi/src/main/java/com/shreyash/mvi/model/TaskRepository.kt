@@ -4,6 +4,20 @@ object TaskRepository {
 
     private val tasks = mutableListOf<Task>()
 
+    init {
+        // Add a demo task when the repository is initialized
+        if (tasks.isEmpty()) {
+            tasks.add(
+                Task(
+                    id = 1,
+                    title = "Welcome to MVI Task App",
+                    description = "This is a demo task. You can add more tasks using the form below.",
+                    isCompleted = false
+                )
+            )
+        }
+    }
+
     fun addTask(task: Task) {
         tasks.add(task)
     }
@@ -19,7 +33,6 @@ object TaskRepository {
             tasks[index] = updatedTask
         }
     }
-
 
     fun getTasks(): List<Task> {
         return tasks.toList() // important change
