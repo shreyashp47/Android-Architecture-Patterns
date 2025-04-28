@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.shreyash.androidarchitecturepatterns.databinding.ActivityMainBinding
 import com.shreyash.mvc.MVCMainActivity
-import com.shreyash.mvi.MVIMainActivity
+import com.shreyash.mvi.view.MVIMainActivity
 import com.shreyash.mvp.MVPMainActivity
 import com.shreyash.mvvm.view.MVVMMainActivity
 
