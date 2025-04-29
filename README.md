@@ -171,3 +171,19 @@ mvi/
 ```
 
 ---
+
+
+| Feature                  | MVC (Model-View-Controller)         | MVP (Model-View-Presenter)        | MVVM (Model-View-ViewModel)        | MVI (Model-View-Intent)             |
+|:-------------------------|:-----------------------------------|:----------------------------------|:-----------------------------------|:------------------------------------|
+| **Primary Goal**         | Separate concerns (UI, Data, Logic) | Better testability, separation    | Bind data to UI automatically      | Unidirectional data flow            |
+| **View Role**            | Passive, but sometimes mixed logic | Fully passive, uses Presenter     | Observes ViewModel (LiveData/StateFlow) | Renders state only, very passive     |
+| **Logic Layer**          | Controller                         | Presenter                         | ViewModel                          | Intent + Reducer                    |
+| **Communication Flow**   | View ↔ Controller                  | View → Presenter → Model ↔ View   | View ↔ ViewModel ↔ Model            | View → Intent → State → View         |
+| **Data Binding**         | Manual                             | Manual                            | Automatic (LiveData, DataBinding)  | Manual (but predictable via State)   |
+| **State Management**     | Hard to manage as app grows         | Moderate, handled by Presenter    | Easier via LiveData/StateFlow       | Centralized Single Source of Truth   |
+| **Testing**              | Difficult                          | Easy to unit test Presenter       | Easy to unit test ViewModel         | Easy, very predictable               |
+| **Best For**             | Simple apps                        | Medium complexity apps            | Medium to large apps                | Apps with complex state changes     |
+| **Example Libraries**    | None (manual)                      | None (manual)                     | LiveData, ViewModel, DataBinding, StateFlow | Coroutine Channel, Flow, Redux-like   |
+| **Difficulty Level**     | Easy                               | Moderate                         | Moderate to Hard (with binding)    | Harder (initially) but scalable     |
+| **Main Issue**           | Controller becomes "God Object"    | View still knows Presenter        | Data Binding magic can hide bugs    | Boilerplate, needs discipline        |
+| **Example**              | Basic Login Screen                 | Login with validation rules       | Real-time updating screen (chat)    | Shopping cart, chat, real-time games |
