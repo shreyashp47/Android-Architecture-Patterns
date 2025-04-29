@@ -1,4 +1,4 @@
-# Android Architecture Patterns
+## Android Architecture Patterns
 
 This project demonstrates the implementation of four major Android architecture patterns using a simple task management application. Each module showcases a different architectural approach to help developers understand the differences, advantages, and use cases for each pattern.
 
