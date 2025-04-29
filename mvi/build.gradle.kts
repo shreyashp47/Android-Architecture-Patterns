@@ -45,6 +45,17 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    // Add Espresso-Intents for intent testing
+    androidTestImplementation("androidx.test.espresso:espresso-intents:${libs.versions.espressoCore.get()}")
+    // Add Espresso idling resources for async operations
+    androidTestImplementation("androidx.test.espresso:espresso-idling-resource:${libs.versions.espressoCore.get()}")
+    // Add Espresso contrib for RecyclerView testing
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:${libs.versions.espressoCore.get()}")
+    // Add Mockito for mocking in tests
+    androidTestImplementation("org.mockito:mockito-android:5.0.0")
+    // Add Core testing for LiveData testing
+    androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
+    androidTestImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
 
 }

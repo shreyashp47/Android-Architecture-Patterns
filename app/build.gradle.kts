@@ -58,4 +58,6 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-intents:${libs.versions.espressoCore.get()}")
     // Add Espresso idling resources for async operations
     androidTestImplementation("androidx.test.espresso:espresso-idling-resource:${libs.versions.espressoCore.get()}")
+    // Add Espresso contrib for RecyclerView testing
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:${libs.versions.espressoCore.get()}")
 }
