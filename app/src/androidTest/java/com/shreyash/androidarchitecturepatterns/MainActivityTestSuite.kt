@@ -10,6 +10,7 @@ import org.junit.runners.Suite
 @Suite.SuiteClasses(
     MainActivityTest::class,
     MainActivityAdvancedTest::class,
-    MainActivityIdlingTest::class
+    MainActivityIdlingTest::class,
+    MVIEndToEndTest::class
 )
 class MainActivityTestSuite
