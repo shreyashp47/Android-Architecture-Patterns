@@ -54,4 +54,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    // Add Espresso-Intents for intent testing
+    androidTestImplementation("androidx.test.espresso:espresso-intents:${libs.versions.espressoCore.get()}")
+    // Add Espresso idling resources for async operations
+    androidTestImplementation("androidx.test.espresso:espresso-idling-resource:${libs.versions.espressoCore.get()}")
 }
