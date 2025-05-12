@@ -36,19 +36,22 @@
       <SelectionState runConfigName="mvi">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="testMVIButtonNavigation()">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="MainActivityAdvancedTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="MainActivityIdlingTest">
+      <SelectionState runConfigName="MVIEndToEndTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="TaskIntentTest">
+      <SelectionState runConfigName="testButtonClickPerformance()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="TaskViewModelTest">
+      <SelectionState runConfigName="testUIElementsDisplayed()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="testMVCButtonNavigation()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="cleanarchitecture">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

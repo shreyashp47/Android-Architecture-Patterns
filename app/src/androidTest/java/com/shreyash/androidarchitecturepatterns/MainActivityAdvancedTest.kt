@@ -3,6 +3,7 @@ package com.shreyash.androidarchitecturepatterns
 import android.view.View
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.Espresso.pressBack
 import androidx.test.espresso.UiController
 import androidx.test.espresso.ViewAction
 import androidx.test.espresso.action.ViewActions.click
@@ -117,8 +118,14 @@ class MainActivityAdvancedTest {
     fun testButtonClickPerformance() {
         // Test the performance of button clicks using a custom ViewAction
         onView(withId(R.id.btn_mvc)).perform(clickWithTimeMeasurement())
+        Thread.sleep(200)
+        pressBack()
         onView(withId(R.id.btn_mvp)).perform(clickWithTimeMeasurement())
+        Thread.sleep(200)
+        pressBack()
         onView(withId(R.id.btn_mvvm)).perform(clickWithTimeMeasurement())
+        Thread.sleep(200)
+        pressBack()
         onView(withId(R.id.btn_mvi)).perform(clickWithTimeMeasurement())
     }
 

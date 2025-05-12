@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.shreyash.androidarchitecturepatterns.databinding.ActivityMainBinding
+import com.shreyash.cleanarchitecture.CAMainActivity
 import com.shreyash.mvc.MVCMainActivity
 import com.shreyash.mvi.view.MVIMainActivity
 import com.shreyash.mvp.MVPMainActivity
@@ -51,6 +52,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnMvi.setOnClickListener {
             startActivity(Intent(this, MVIMainActivity::class.java))
+        }
+        binding.btnCa.setOnClickListener {
+            startActivity(Intent(this, CAMainActivity::class.java))
         }
     }
 }
