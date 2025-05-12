@@ -1,14 +1,15 @@
 # Android Architecture Patterns
 
-This project demonstrates the implementation of four major Android architecture patterns using a simple task management application. Each module showcases a different architectural approach to help developers understand the differences, advantages, and use cases for each pattern.
+This project demonstrates the implementation of five major Android architecture patterns using a simple task management application. Each module showcases a different architectural approach to help developers understand the differences, advantages, and use cases for each pattern.
 
 ## About the Project
 
-This project contains four separate modules, each implementing the same task management functionality using a different architecture pattern:
+This project contains five separate modules, each implementing the same task management functionality using a different architecture pattern:
 - MVC (Model-View-Controller)
 - MVP (Model-View-Presenter)
 - MVVM (Model-View-ViewModel)
 - MVI (Model-View-Intent)
+- Clean Architecture
 
 All modules share a common data model and similar UI, allowing for direct comparison of how the same functionality is implemented across different architectural approaches.
 
@@ -167,6 +168,65 @@ mvi/
 ├── res/                               # View
 │   ├── layout/
 │   │   ├── activity_main.xml          # Main UI layout
+│   │   └── item_task.xml              # Task item layout
+```
+
+---
+
+### Clean Architecture
+A layered architectural pattern that emphasizes separation of concerns and dependency rules to create more maintainable and testable applications.
+
+**Key Characteristics:**
+- **Domain Layer**: Contains business logic and rules, completely independent of other layers
+- **Data Layer**: Implements repositories and manages data sources
+- **Presentation Layer**: Handles UI and user interactions
+- **Dependency Rule**: Dependencies always point inward (outer layers depend on inner layers)
+
+**Advantages:**
+- Clear separation of concerns
+- Highly testable due to layer independence
+- Business logic is isolated from framework details
+- Easier to maintain and extend
+- Flexible for changing requirements or technologies
+
+**Disadvantages:**
+- More complex initial setup
+- More boilerplate code
+- Steeper learning curve
+- Can be overengineered for simple applications
+
+### Project Structure Clean Architecture
+```
+cleanarchitecture/
+├── domain/                            # Domain Layer (innermost layer)
+│   ├── model/                         
+│   │   └── Task.kt                    # Domain entities
+│   ├── repository/                    
+│   │   └── TaskRepository.kt          # Repository interfaces
+│   └── usecase/                       # Business logic
+│       ├── GetTasksUseCase.kt         
+│       ├── AddTaskUseCase.kt          
+│       ├── DeleteTaskUseCase.kt       
+│       └── ToggleTaskCompleteUseCase.kt
+├── data/                              # Data Layer
+│   ├── datasource/                    
+│   │   ├── TaskDataSource.kt          # Data source interface
+│   │   └── InMemoryTaskDataSource.kt  # Implementation of data source
+│   └── repository/                    
+│       └── TaskRepositoryImpl.kt      # Implementation of domain repository
+├── presentation/                      # Presentation Layer (outermost layer)
+│   ├── view/                          
+│   │   ├── CAMainActivity.kt          # Activity that observes ViewModel
+│   │   └── adapter/                   
+│   │       └── TaskAdapter.kt         # RecyclerView adapter
+│   ├── viewmodel/                     
+│   │   ├── TaskViewModel.kt           # Exposes state to the View
+│   │   └── TaskViewModelFactory.kt    # Factory for creating ViewModel
+│   └── state/                         
+│       └── TaskState.kt               # UI state representation
+├── res/                               
+│   ├── layout/                        
+│   │   ├── activity_camain.xml        # Main UI layout
 │   │   └── item_task.xml              # Task item layout
 ```
 

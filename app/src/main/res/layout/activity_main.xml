@@ -34,4 +34,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Open MVI" />
+    <Button
+        android:id="@+id/btn_ca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Open Clean Architecture" />
 </LinearLayout>

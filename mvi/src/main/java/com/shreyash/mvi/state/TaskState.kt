@@ -2,7 +2,7 @@ package com.shreyash.mvi.state
 
 import com.shreyash.mvi.model.Task
 
-
+//represents the entire UI state
 sealed class TaskState {
     object Idle : TaskState()
     object Loading : TaskState()

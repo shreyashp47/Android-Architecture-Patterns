@@ -1,32 +1,24 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.shreyash.androidarchitecturepatterns"
+    namespace = "com.shreyash.cleanarchitecture"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.shreyash.androidarchitecturepatterns"
         minSdk = 28
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-    buildFeatures {
-        viewBinding = true
-        dataBinding = true
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -37,21 +29,19 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
-
-    implementation(project(":mvc"))
-    implementation(project(":mvp"))
-    implementation(project(":mvvm"))
-    implementation(project(":mvi"))
     implementation(project(":common"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(project(":cleanarchitecture"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -61,4 +51,11 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-idling-resource:${libs.versions.espressoCore.get()}")
     // Add Espresso contrib for RecyclerView testing
     androidTestImplementation("androidx.test.espresso:espresso-contrib:${libs.versions.espressoCore.get()}")
+    // Add Mockito for mocking in tests
+    androidTestImplementation("org.mockito:mockito-android:5.0.0")
+    // Add Core testing for LiveData testing
+    androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
+    androidTestImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
+
 }
